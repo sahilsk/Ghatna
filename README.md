@@ -64,13 +64,13 @@ Removes a listener from an event listener list.
 Maintained by
 ----------------------
 
-Sonu K. Meena (Full Stack Developer )
-E-mail: sonukr666@gmail.com
+Sonu K. Meena (Full Stack Developer )  
+E-mail: sonukr666@gmail.com  
 Web: http://sahilsk.github.io
 
 
 License
 -------------------
 
-Licensed under the MIT license.
+Licensed under the MIT license.  
 Copyright (c) 2014 @sahilsk
