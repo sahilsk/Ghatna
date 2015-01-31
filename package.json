@@ -1,0 +1,31 @@
+{
+  "name": "Ghatna",
+  "version": "1.0.0",
+  "description": "a simple event emitter class",
+  "main": "ghatna.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahilsk/Ghatna.git"
+  },
+  "keywords": [
+    "event-emitter",
+    "events"
+  ],
+  "author": "Sonu K. Meena <sonukr666@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sahilsk/Ghatna/issues"
+  },
+  "homepage": "https://github.com/sahilsk/Ghatna",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-clean": "^0.3.1",
+    "gulp-doggy": "0.0.1",
+    "gulp-jasmine-phantom": "^1.1.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0"
+  }
+}

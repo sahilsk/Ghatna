@@ -19,7 +19,7 @@
 * @constructor
 *
 */
-	
+
 	var Ghatna = function(){};
 
 /**
@@ -28,20 +28,20 @@
 *	@callback listenerCallback
 *	@param {*} [args] - arguments to callback function
 */
-	
+
 /**
 * Attach listener to event
 *
 *	@param {string} event - event to listen to.
 *	@param {listenerCallback} listener - The callback that execute on event emit
-*	@returns {Object} 
+*	@returns {Object}
 *
-*/	
+*/
 	Ghatna.prototype.on = function(event, listener){
 		this.collection = this.collection || {};
 		this.collection[event] = this.collection[event] || [];
 		this.collection[event].push(listener);
-			
+
 		return this;
 	}
 
@@ -50,13 +50,13 @@
 *
 *	@param {string} event - event  to emit
 *	@param {*}  [] - arguments to pass to listeners
-*	@returns {Object} 
+*	@returns {Object}
 *
-*/	
-	
+*/
+
 	Ghatna.prototype.emit = function(){
 		var args = Array.prototype.slice.call( arguments);
-		if( args.length <1){
+		if( args.length < 1){
 			throw " No event provided";
 		}
 		var event =  args.shift();
@@ -71,7 +71,7 @@
 		}
 		return this;
 	}
-	
+
 /**
 * Stop listener from listening to event
 *
@@ -85,9 +85,9 @@
 		}
 		return this;
 	}
-	
+
 /**
-*	Attach listener to event in a way that it execute only once. 
+*	Attach listener to event in a way that it execute only once.
 *
 *  @param {string} event - event name to attach listener to
 *  @param {listenerCallback} listener - The callback that execute once on given event emit
@@ -96,14 +96,15 @@
 	Ghatna.prototype.once =function( event,  listener){
 		var that = this;
 		function fn(){
+			var args = Array.prototype.slice.call(arguments);
 			that.off( event, fn);
-			listener.apply(that, arguments)
-		}		
+			listener.apply(that, args);
+		}
 		this.on(event, fn);
 	}
-	
 
-	
+
+
 // AMD
 	if( typeof window.define === "function" && window.define.amd !== undefined ){
 		window.define("Ghatna", [], function(){
@@ -111,7 +112,7 @@
 		});
 	// CommonJS
 	}else if ( typeof module !== "undefined" && module.exports !== undefined ){
-		module.exports = Ghatna;	
+		module.exports = Ghatna;
 	// Browser
 	}else 	if( typeof window.Ghatna !== "function" ) {
 			window.Ghatna = Ghatna;

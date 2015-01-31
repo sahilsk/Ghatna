@@ -1,0 +1,36 @@
+var
+    gulp = require("gulp")
+  , uglify = require("gulp-uglify")
+  , rename = require('gulp-rename')
+  , clean = require('gulp-clean')
+  , jsdoc = require('gulp-doggy')
+  , jasmine = require('gulp-jasmine-phantom')
+;
+
+gulp.task("build", function(){
+  gulp.src("./src/*.js")
+    .pipe( uglify())
+    .pipe( rename("ghatna.min.js") )
+    .pipe( gulp.dest("./dist"));
+})
+
+gulp.task("clean", function(){
+  gulp.src("./dist")
+    .pipe(clean() );
+})
+
+gulp.task("jsdoc", function(){
+  gulp.src(["./src/*.js", "README.md"])
+  .pipe(jsdoc('./doc'))
+})
+
+gulp.task("test", function(){
+  gulp.src("spec/test.js")
+    .pipe( jasmine() );
+})
+
+gulp.task("watch", function(){
+  gulp.watch(["./src/*.js", "./spec/*.js"], ["build", "test"]);
+})
+
+gulp.task("default", ["clean","build", "watch"] );
