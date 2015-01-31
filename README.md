@@ -5,6 +5,12 @@ A simple event emitter class for browser
 
 >> `Ghatna` is a hindi word meaning 'event'
 
+Run test
+---------
+
+	$ npm install
+	$ gulp --gulpfile gulpfile test // or  gulp test
+
 
 How-to
 ----------
